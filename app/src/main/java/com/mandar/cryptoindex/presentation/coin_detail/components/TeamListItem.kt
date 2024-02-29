@@ -14,11 +14,16 @@ import com.mandar.cryptoindex.data.remote.dto.TeamMember
 
 
 @Composable
-fun TeamList(teamMember: TeamMember, modifier: Modifier = Modifier) {
+fun TeamListItem(teamMember: TeamMember, modifier: Modifier = Modifier) {
     Column(modifier = modifier, verticalArrangement = Arrangement.Center) {
         Text(text = teamMember.name, style = MaterialTheme.typography.headlineMedium)
         Spacer(modifier = Modifier.height(4.dp))
-        Text(text = teamMember.position, style = MaterialTheme.typography.headlineSmall, fontStyle = FontStyle.Italic)
+        Text(
+            text = teamMember.position,
+            style = MaterialTheme.typography.bodyMedium,
+            fontStyle = FontStyle.Italic
+        )
     }
+
 
 }

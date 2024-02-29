@@ -1,4 +1,5 @@
 package com.mandar.cryptoindex.data.remote.dto
+import com.google.gson.annotations.SerializedName
 
 data class Stats(
     val contributors: Int,

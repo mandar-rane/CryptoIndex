@@ -26,9 +26,7 @@ class CoinDetailViewModel @Inject constructor(
 
     init {
         savedStateHandle.get<String>(Constants.PARAM_COIN_ID)?.let { coinId ->
-            {
-                getCoin(coinId)
-            }
+            getCoin(coinId)
         }
     }
 
@@ -40,13 +38,13 @@ class CoinDetailViewModel @Inject constructor(
                 }
 
                 is Resource.Loading -> {
-                    _state.value = CoinDetailState(
-                        error = result.message ?: "An unexpected error occurred"
-                    )
+                    _state.value = CoinDetailState(isLoading = true)
                 }
 
                 is Resource.Error -> {
-                    _state.value = CoinDetailState(isLoading = true)
+                    _state.value = CoinDetailState(
+                        error = result.message ?: "An unexpected error occured"
+                    )
                 }
             }
         }.launchIn(

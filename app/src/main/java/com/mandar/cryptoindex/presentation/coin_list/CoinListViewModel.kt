@@ -19,6 +19,10 @@ class CoinListViewModel @Inject constructor(
     private val _state = mutableStateOf<CoinListState>(CoinListState())
     val state: State<CoinListState> = _state
 
+    init{
+        getCoins()
+    }
+
     private fun getCoins() {
         getCoinsUseCase().onEach { result ->
             when (result) {
@@ -27,13 +31,14 @@ class CoinListViewModel @Inject constructor(
                 }
 
                 is Resource.Loading -> {
-                    _state.value = CoinListState(
-                        error = result.message ?: "An unexpected error occurred"
-                    )
+                    _state.value = CoinListState(isLoading = true)
                 }
 
                 is Resource.Error -> {
-                    _state.value = CoinListState(isLoading = true)
+
+                    _state.value = CoinListState(
+                        error = result.message ?: "An unexpected error occurred"
+                    )
                 }
             }
         }.launchIn(
