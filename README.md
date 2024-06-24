@@ -1,3 +1,11 @@
+Features:
+Dependency Injection using Dagger-Hilt
+Jetpack Compose
+MVVM Clean Architecture
+DTOs
+Domain Layer, Use-Cases
+Coroutines
+
 ![Screenshot_2024-06-24-23-49-01-14_d3e9d8f329e34c3318db6ec340ea3af0](https://github.com/mandar-rane/CryptoIndex-Clean-Architecture-App/assets/98955924/cd834e53-752c-4586-9486-b604addaee5e) 
 <br>
 <br>
